@@ -1,38 +1,92 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+section.ChatArea{
+  height: 80%;
+  width: 40%;
+  background-color: rgb(46, 46, 46);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
+  
+
+}
+
+
+header.userinfoheader{
+  align-self: flex-end;
+  width: 100%;
+  background-color: rgba(39, 39, 39, 0.39);
+  height: 13%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+
+}
+
+input#username{
+  border: none;
+  background-color: rgba(0, 0, 0, 0.356);
+  width: 60%;
+  margin: 0px 10px;
+  outline: none;
+  border-radius: 20px;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+}
+
+button.setuser{
+    color: rgba(255, 255, 255, 0.26);
+    cursor: pointer;
+    font-family: roobert;
+    font-weight: 100;
+    font-size: 20px;
+}
+
+button.setuser:hover{
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+main.content{
+  width: 95%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.158);
+  border-radius: 20px;
+
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+span.userspan{
+  color: rgb(255, 255, 255);
+  padding: 10px;
+  font-family: roobert;
+}
+
+
+span.idspan{
+  color: rgb(0, 0, 0);
+  font-size: 10px;
+  align-self: flex-end;
+}
+
+@media (max-width: 920px){
+
+  section.ChatArea{
+    width: 100%;
+    align-self: flex-end;
+    border-radius: 20px 20px 0px 0px;
   }
-  to {
-    transform: rotate(360deg);
+
+  header.userinfoheader{
+    border-radius: 20px 20px 0px 0px;
+    
+  
   }
+
+
 }

@@ -1,0 +1,64 @@
+
+
+
+img.userimage{
+    border-radius: 100%;
+    max-height: 95%;
+    max-width: 80px;
+    height: auto;
+    width: auto;
+    padding: 0px 10px;
+    
+}
+
+div.bar{
+    background-color: rgb(46, 46, 46);
+    border-radius: 40px;
+    height: 60px;
+    width: 40%;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    overflow-x: auto;
+
+
+    scrollbar-color: grey;
+    scrollbar-width: thin;
+
+}
+
+@media (max-width: 920px){
+
+    div.bar{
+        width: 98%;
+    }
+  
+  
+  }
+
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: rgb(240, 240, 245) rgb(27, 27, 27);
+  }
+  
+  /* Works on Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 1px;
+  }
+  
+  *::-webkit-scrollbar-track {
+    background: rgb(0, 0, 0);
+    height: 10px;
+    border-radius: 20px;
+  
+  
+  }
+  
+  *::-webkit-scrollbar-thumb {
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+  
+    border: 1px solid rgb(255, 255, 255);
+  }
+ 

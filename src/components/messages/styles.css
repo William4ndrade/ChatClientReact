@@ -1,0 +1,33 @@
+div.message{
+    display: flex;
+    border-radius: 20px 20px 0px 20px;
+    width: 70%;
+    min-height: 50px;
+    max-height: 150px;
+    overflow: auto;
+    color: white;
+    background-color: black;
+    margin: 10px;
+    padding: 20px;
+    align-self: flex-end;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+div.userarea{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+img.useravatar{
+    border-radius: 100%;
+    height: 50%;
+    align-self: flex-start;
+}
+
+span.username{
+    color: rgb(59, 59, 59);
+}
