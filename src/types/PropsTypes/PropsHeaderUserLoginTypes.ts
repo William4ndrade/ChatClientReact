@@ -8,8 +8,8 @@ type PropsHeaderUserLoginTypes = {
     Client?: CompatClient,
     FeedbackFunction: (color: string, text: string) => void,
     ActiveUsers: ActiveUsersType,
-    User?: UserType,
-    SetUser: React.Dispatch<React.SetStateAction<UserType | undefined>>
+    User: UserType,
+    SetUser: React.Dispatch<React.SetStateAction<UserType>>
 
 }
 

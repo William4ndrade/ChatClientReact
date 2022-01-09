@@ -24,7 +24,7 @@ const HeaderUserLogin = (props: PropsHeaderUserLoginTypes) => {
             id: v4(),
             date: new Date(),
             username: username,
-            thumbnail: GetThumbnail(),
+            thumbnail: props.User.thumbnail,
         }
     }
 
@@ -54,9 +54,7 @@ const HeaderUserLogin = (props: PropsHeaderUserLoginTypes) => {
         }
     }
 
-    function GetThumbnail(){
-        return `https://avatars.dicebear.com/api/avataaars/${Math.floor(Math.random() * 3000 )}.svg`
-   }
+    
 
 
     return (

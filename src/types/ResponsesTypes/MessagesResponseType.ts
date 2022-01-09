@@ -4,7 +4,7 @@ import MessagesActiveType from "../MessagesTypes/MessagesActiveType";
 type MessageResponseType = {
     
     code: number,
-    messagesActive: MessagesActiveType
+    messages: MessagesActiveType
     statustext: string
 
 

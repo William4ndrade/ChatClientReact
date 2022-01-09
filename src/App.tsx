@@ -23,8 +23,14 @@ import MessagesActiveType from './types/MessagesTypes/MessagesActiveType';
 
 function App() {
 
-   
-   const [User,SetUser] = useState<UserType>();
+
+   const InitialStateUsers:UserType = {
+      date: new Date(),
+      id: "",
+      username: "",
+      thumbnail: `https://avatars.dicebear.com/api/avataaars/${Math.floor(Math.random() * 3000 )}.svg`
+   }
+   const [User,SetUser] = useState<UserType>(InitialStateUsers);
    const InitialStateActiveUsers: ActiveUsersType = [
       {username: "", thumbnail: ""}
    ]
@@ -36,6 +42,7 @@ function App() {
       backgroundcolor: ""
    })
 
+  
    const [MessagesActives, SetMessageActive] = useState<MessagesActiveType>()
 
 
@@ -57,16 +64,18 @@ function App() {
    }
    
 
-
+   
    
 
    useEffect(() => {
-      SetClient(ConnectClient(SetActiveUsers, ActiveUsers,SetUser,HandleFeedback,User));
+      SetClient(ConnectClient(SetActiveUsers, ActiveUsers,SetUser,HandleFeedback,User, SetMessageActive));
    }, [])
 
 
   
-
+   useEffect(() => {
+      console.log(MessagesActives)
+   }, [MessagesActives])
  
 
   return (
@@ -79,17 +88,19 @@ function App() {
         <main className='content'>
             
             {
-            
+               
             MessagesActives ?
                (MessagesActives.map(e => {
-                  <Messages  text={e.text} data={e.data} user={e.user} me={e.me}        />
+                 
+                  return <Messages  text={e.text} data={e.data} user={User} me={e.me}        />
                })):
-               
+
                ""
          
          
          }
 
+            
 
 
 

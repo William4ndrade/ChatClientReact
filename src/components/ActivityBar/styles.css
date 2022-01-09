@@ -37,13 +37,13 @@ div.bar{
   
   }
 
-  * {
+  /* * {
     scrollbar-width: thin;
     scrollbar-color: rgb(240, 240, 245) rgb(27, 27, 27);
   }
   
   /* Works on Chrome, Edge, and Safari */
-  *::-webkit-scrollbar {
+  /* *::-webkit-scrollbar {
     width: 1px;
   }
   
@@ -61,4 +61,4 @@ div.bar{
   
     border: 1px solid rgb(255, 255, 255);
   }
- 
+   */

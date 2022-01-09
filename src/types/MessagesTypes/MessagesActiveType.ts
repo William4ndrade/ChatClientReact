@@ -1,8 +1,8 @@
 
 import MessageActiveType from "./MessageActiveType";
 
-type AllMessagesActiveType =  [
-    MessageActiveType
-]
+type AllMessagesActiveType =  Array<MessageActiveType>
+    
+
 
 export default AllMessagesActiveType;

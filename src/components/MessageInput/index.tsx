@@ -50,7 +50,8 @@ const Input = (props: PropsMessageInputType) => {
         eventodesubmit.preventDefault();
         if(props.client != null && props.User != null && CheckWithUserAreOneActiveUser(props.User)){
             if(text.length){
-                SendRequestService(props.client, MessageFactory(text , props.User) , UrlToSendRequest.Message)
+                SendRequestService(props.client, MessageFactory(text , props.User) , UrlToSendRequest.Message);
+                SetText("");
                 return;
             }else{
                 props.SetFeedback("red", "Vamos escrever antes de mandar algo né amigão")
@@ -70,7 +71,7 @@ const Input = (props: PropsMessageInputType) => {
     return (
         <form onSubmit={HandleSubmit} className='formsendmessage' action="/app/new" method="post">
             
-            <input onChange={HandleInputText} value={text} placeholder='Escreva aqui' type="text" name="sendmessage" id="send" />
+            <input maxLength={300} required autoComplete="off" onChange={HandleInputText} value={text} placeholder='Escreva aqui' type="text" name="sendmessage" id="send" />
 
             <button> <i className="fas fa-paper-plane"></i> </button>
 

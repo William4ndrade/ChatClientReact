@@ -9,14 +9,39 @@ import "./styles.css"
 
 
 const Messages = (props:MessageActiveType) => {
+
+  function StyleConfigsForUser() {
+
+      if(props.me){
+          return {
+                color: "white",
+                backgroundColor: 'black',
+                alignSelf: "flex-end",
+                borderRadius: "20px 20px 0px 20px"
+
+                
+            }
+        
+      }         
+      return {
+            color: "black",
+            backgroundColor: 'white',
+            alignSelf: "flex-start",
+            borderRadius: "20px 20px 20px 0px" 
+          }
+    
+  }
+
+
+
   return (
-      <div className='message'>
-          <div className='textarea' >
+      <div style={StyleConfigsForUser()}  className='message'>
+          <div className='textarea'  >
               {props.text}
           </div>
           <div className='userarea' >
                 <img draggable={false} className='useravatar' src={props.user.thumbnail}/>
-                <span className='username'>{props}</span>
+                <span style={{color: "gray", fontSize: "13px"}} className='username'>{props.user.username}</span>
           </div>
 
 

@@ -1,9 +1,8 @@
+import OneActiveUserType from "./OneActiveUserType";
+
 type ActiveUsersType = 
  [
-        {
-            username: string,
-            thumbnail: string
-        }
+        OneActiveUserType
 ]
 
 
