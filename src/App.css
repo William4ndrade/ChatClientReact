@@ -1,5 +1,5 @@
 section.ChatArea{
-  height: 70%;
+  height: 80vh;
   width: 40%;
   background-color: rgb(46, 46, 46);
   border-radius: 10px;
@@ -7,6 +7,7 @@ section.ChatArea{
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  
  
 
  
@@ -53,18 +54,46 @@ button.setuser:hover{
 
 main.content{
   width: 95%;
-  height: 75%;
+  height: 80%;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
   flex-direction: column;
+   justify-items: flex-end;
+  justify-content: flex-end;
   background-color: rgba(0, 0, 0, 0.158);
   border-radius: 20px;
-  overflow-y: auto;
-  
- 
+  overflow: auto;
+
   
 
 }
+
+div.messagesArea{
+
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  overflow-y: auto;
+
+
+
+}
+
+div.messagesArea::-webkit-scrollbar{
+    width: 5px;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+
+div.messagesArea::-webkit-scrollbar-thumb{
+  background-color: rgb(105, 105, 105);
+  border-radius: 20px;
+
+
+}
+
+
 
 
 span.userspan{

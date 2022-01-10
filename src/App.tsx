@@ -74,7 +74,10 @@ function App() {
 
   
    useEffect(() => {
-      console.log(MessagesActives)
+      const el = document.querySelector("div.messagesArea");
+      if(el !== null) el.scrollTop = el.scrollHeight - el.clientHeight;
+     
+      
    }, [MessagesActives])
  
 
@@ -85,20 +88,24 @@ function App() {
      <ActivityBar users={ActiveUsers}  />
      <section className='ChatArea' >
         <HeaderUserLogin  User={User} SetUser={SetUser}  Client={Client} ActiveUsers={ActiveUsers}  FeedbackFunction={HandleFeedback}  />
-        <main className='content'>
-            
-            {
-               
-            MessagesActives ?
-               (MessagesActives.map(e => {
-                 
-                  return <Messages  text={e.text} data={e.data} user={e.user}  AtualUser={User}       />
-               })):
+        <main  className='content'>
+            <div className='messagesArea'>
 
-               ""
-         
-         
-         }
+                     {
+                                    
+                        MessagesActives ?
+                                    (MessagesActives.map((e,i) => {
+                                    
+                                       return <Messages key={i}  text={e.text} data={e.data} user={e.user}  AtualUser={User}       />
+                                    })):
+
+                           ""
+                              
+                              
+                              }
+
+            </div>
+            
 
             
 
