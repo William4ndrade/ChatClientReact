@@ -64,10 +64,10 @@ const HeaderUserLogin = (props: PropsHeaderUserLoginTypes) => {
                 borderRadius: "100%",
                 width: "50px"
 
-            }} src={props.User?.thumbnail} />
-            {!props.User ? (
+            }} src={props.User.thumbnail} />
+            {!props.User.username ? (
                 <>
-                    <input onChange={HandleUserInput} value={UserInput} placeholder='Username' title='Escolha um nome de usuário' maxLength={15} type="text" name="username" id="username" />
+                    <input onChange={HandleUserInput} value={UserInput} placeholder='Username' title='Escolha um nome de usuário' maxLength={10} minLength={1} type="text" name="username" id="username" />
                     <button onClick={HandleUserSubmit} className='setuser'>Go</button>
                 </>) :
                 <>

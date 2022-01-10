@@ -7,7 +7,7 @@ type MessageActiveType =  {
     text: string,
     user: UserType
     data: Date,
-    me?: boolean
+    AtualUser: UserType
 }
 
 export default MessageActiveType

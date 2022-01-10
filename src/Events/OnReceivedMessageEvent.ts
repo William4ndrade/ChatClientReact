@@ -12,18 +12,9 @@ export function OnRecievedMessage(ev: IMessage, HandleFeedback : (color:string, 
 
 
     const body:MessageResponseType = JSON.parse(ev.body);
-    if(body.code < 300){
+    if(body.messages){
         if(SetMessage){
-            const AddMeAtributte : AllMessagesActiveType | undefined = body.messages.map(e => {
-                
-                const AddMe = e;
-                AddMe.me = User?.username == e.user.username;
-                return AddMe;
-              
-            })
-
-
-            SetMessage(AddMeAtributte)
+            SetMessage(body.messages)
             
         }
 

@@ -4,7 +4,7 @@ div.message{
     width: 70%;
     min-height: 50px;
     max-height: 150px;
-    overflow: auto;
+    overflow-y: auto;
     color: white;
     background-color: black;
     margin: 10px;

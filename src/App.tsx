@@ -92,7 +92,7 @@ function App() {
             MessagesActives ?
                (MessagesActives.map(e => {
                  
-                  return <Messages  text={e.text} data={e.data} user={User} me={e.me}        />
+                  return <Messages  text={e.text} data={e.data} user={e.user}  AtualUser={User}       />
                })):
 
                ""
