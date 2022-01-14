@@ -9,12 +9,12 @@ export enum UrlToSendRequest{
      User, Message
 }
 
-export function SendRequestService(Client: CompatClient, Message: UserType | MessageType, url: UrlToSendRequest  ):boolean{
+export function SendRequestServiceWs(Client: CompatClient, data: UserType | MessageType ,url: UrlToSendRequest  ):boolean{
 
-     const ToSend = url === UrlToSendRequest.User ? SocketConfigs.Users_Route_send : SocketConfigs.Message_Route_send
+     const ToSend = url === UrlToSendRequest.User ? SocketConfigs.PrivateUrls.CreateNewUser : SocketConfigs.PrivateUrls.CreateNewMessage
        if(Client.connected){
           try {
-               Client.send(ToSend, {}, JSON.stringify(Message));
+               Client.send(ToSend,{}, JSON.stringify(data));
                 return true;
           } catch (error) {
                return false

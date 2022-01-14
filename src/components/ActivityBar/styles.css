@@ -20,7 +20,7 @@ div.bar{
     display: flex;
     align-items: center;
     padding: 10px;
-    overflow-x: auto;
+    overflow-x: hidden;
 
 
     scrollbar-color: grey;
@@ -31,34 +31,9 @@ div.bar{
 @media (max-width: 920px){
 
     div.bar{
-        width: 98%;
+        width: 93%;
     }
   
   
   }
 
-  /* * {
-    scrollbar-width: thin;
-    scrollbar-color: rgb(240, 240, 245) rgb(27, 27, 27);
-  }
-  
-  /* Works on Chrome, Edge, and Safari */
-  /* *::-webkit-scrollbar {
-    width: 1px;
-  }
-  
-  *::-webkit-scrollbar-track {
-    background: rgb(0, 0, 0);
-    height: 10px;
-    border-radius: 20px;
-  
-  
-  }
-  
-  *::-webkit-scrollbar-thumb {
-    background-color: rgb(255, 255, 255);
-    border-radius: 20px;
-  
-    border: 1px solid rgb(255, 255, 255);
-  }
-   */

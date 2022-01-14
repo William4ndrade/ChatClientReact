@@ -3,7 +3,7 @@ import UserType from '../../types/UserTypes/UserType';
 import PropsHeaderUserLoginTypes from "../../types/PropsTypes/PropsHeaderUserLoginTypes"
 import "./Styles.css"
 import {v4} from "uuid"
-import { SendRequestService, UrlToSendRequest } from '../../services/SendRequestService';
+import { SendRequestServiceWs, UrlToSendRequest } from '../../services/SendRequestServiceWs';
 
 
 const HeaderUserLogin = (props: PropsHeaderUserLoginTypes) => {
@@ -41,13 +41,7 @@ const HeaderUserLogin = (props: PropsHeaderUserLoginTypes) => {
 
         if(props.Client.connected && Username.length > 0 ){
             const User = FactoryUser(Username)
-            const result = SendRequestService(props.Client, User , UrlToSendRequest.User); 
-            if(result){
-                props.FeedbackFunction("green", Username + " Entrou!")
-                props.SetUser(User)
-            } else{
-                props.FeedbackFunction("red", "Algo deu errado")
-            }    
+            SendRequestServiceWs(props.Client, User , UrlToSendRequest.User); 
 
         }else{
             props.FeedbackFunction("red", "Você não está conectado ao servidor")
