@@ -69,7 +69,7 @@ function App() {
 
    useEffect(() => {
       SetClient(ConnectClient(SetActiveUsers, ActiveUsers,SetUser,HandleFeedback,User, SetMessageActive));
-      if(window.location.protocol==="https") window.location.protocol="http";
+   
             
 
    }, [])
