@@ -1,6 +1,6 @@
 export default {
 
-    Base_Url: "http://ec2-18-231-18-140.sa-east-1.compute.amazonaws.com:8080/ws",
+    Base_Url: "http://ec2-54-232-144-134.sa-east-1.compute.amazonaws.com:8080/ws",
 
 
     PrivateUrls:{

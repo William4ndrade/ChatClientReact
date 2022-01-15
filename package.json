@@ -24,7 +24,8 @@
     "start": "react-scripts start",
     "build": "CI=false && react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "deploy": "aws s3 sync build/ s3://chatcommunity --acl public-read"
   },
   "eslintConfig": {
     "extends": [
@@ -45,7 +46,6 @@
     ]
   },
   "devDependencies": {
-    "@types/faker": "^5.5.9",
     "@types/sockjs-client": "^1.5.1",
     "@types/uuid": "^8.3.3"
   }
