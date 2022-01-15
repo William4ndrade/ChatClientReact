@@ -1,7 +1,7 @@
 import { CompatClient } from '@stomp/stompjs';
 import { type } from 'os';
 import React, { useState } from 'react';
-import { SendRequestService, UrlToSendRequest } from '../../services/SendRequestService';
+import { SendRequestServiceWs, UrlToSendRequest } from '../../services/SendRequestServiceWs';
 import MessageType from '../../types/MessagesTypes/MessageType';
 import { PropsMessageInputType } from '../../types/PropsTypes/PropsMessageInputType';
 import UserType from '../../types/UserTypes/UserType';
@@ -46,13 +46,16 @@ const Input = (props: PropsMessageInputType) => {
 
     }
 
-    function HandleSubmit(eventodesubmit: React.FormEvent<HTMLFormElement>){
+     function HandleSubmit(eventodesubmit: React.FormEvent<HTMLFormElement>){
         eventodesubmit.preventDefault();
         if(props.client != null && props.User != null && CheckWithUserAreOneActiveUser(props.User)){
             if(text.length){
-                SendRequestService(props.client, MessageFactory(text , props.User) , UrlToSendRequest.Message);
-                SetText("");
+              // TODO  
+              SendRequestServiceWs(props.client, MessageFactory(text, props.User), UrlToSendRequest.Message);
+              SetText("");
                 return;
+              
+                
             }else{
                 props.SetFeedback("red", "Vamos escrever antes de mandar algo né amigão")
                 return;

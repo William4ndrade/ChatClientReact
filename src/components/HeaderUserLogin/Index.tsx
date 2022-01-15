@@ -3,7 +3,7 @@ import UserType from '../../types/UserTypes/UserType';
 import PropsHeaderUserLoginTypes from "../../types/PropsTypes/PropsHeaderUserLoginTypes"
 import "./Styles.css"
 import {v4} from "uuid"
-import { SendRequestService, UrlToSendRequest } from '../../services/SendRequestService';
+import { SendRequestServiceWs, UrlToSendRequest } from '../../services/SendRequestServiceWs';
 
 
 const HeaderUserLogin = (props: PropsHeaderUserLoginTypes) => {
@@ -41,13 +41,7 @@ const HeaderUserLogin = (props: PropsHeaderUserLoginTypes) => {
 
         if(props.Client.connected && Username.length > 0 ){
             const User = FactoryUser(Username)
-            const result = SendRequestService(props.Client, User , UrlToSendRequest.User); 
-            if(result){
-                props.FeedbackFunction("green", Username + " Entrou!")
-                props.SetUser(User)
-            } else{
-                props.FeedbackFunction("red", "Algo deu errado")
-            }    
+            SendRequestServiceWs(props.Client, User , UrlToSendRequest.User); 
 
         }else{
             props.FeedbackFunction("red", "Você não está conectado ao servidor")
@@ -64,10 +58,10 @@ const HeaderUserLogin = (props: PropsHeaderUserLoginTypes) => {
                 borderRadius: "100%",
                 width: "50px"
 
-            }} src={props.User?.thumbnail} />
-            {!props.User ? (
+            }} src={props.User.thumbnail} />
+            {!props.User.username ? (
                 <>
-                    <input onChange={HandleUserInput} value={UserInput} placeholder='Username' title='Escolha um nome de usuário' maxLength={15} type="text" name="username" id="username" />
+                    <input onChange={HandleUserInput} value={UserInput} placeholder='Username' title='Escolha um nome de usuário' maxLength={10} minLength={1} type="text" name="username" id="username" />
                     <button onClick={HandleUserSubmit} className='setuser'>Go</button>
                 </>) :
                 <>

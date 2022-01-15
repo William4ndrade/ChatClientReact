@@ -10,9 +10,15 @@ import "./styles.css"
 
 const Messages = (props:MessageActiveType) => {
 
-  function StyleConfigsForUser() {
 
-      if(props.me){
+    function IsSendByAtualUser():boolean{
+       return props.AtualUser.username == props.user.username
+    }
+
+
+
+  function StyleConfigsForUser() {
+      if(IsSendByAtualUser()){
           return {
                 color: "white",
                 backgroundColor: 'black',
@@ -33,7 +39,6 @@ const Messages = (props:MessageActiveType) => {
   }
 
 
-
   return (
       <div style={StyleConfigsForUser()}  className='message'>
           <div className='textarea'  >
@@ -43,8 +48,6 @@ const Messages = (props:MessageActiveType) => {
                 <img draggable={false} className='useravatar' src={props.user.thumbnail}/>
                 <span style={{color: "gray", fontSize: "13px"}} className='username'>{props.user.username}</span>
           </div>
-
-
       </div>
   );
 }
